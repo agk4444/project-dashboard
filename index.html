@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gopi's Project Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f5f5f4; color: #1c1917; line-height: 1.6; }
@@ -37,6 +38,15 @@ footer { text-align: center; padding: 2rem; color: #a8a29e; font-size: 0.85rem; 
 </header>
 <div class="container">
 <p class="updated">Last updated: October 16, 2026 ~11:45 AM ET</p>
+
+<div class="card" style="margin-bottom: 1.5rem;">
+<h2 style="border-color: #8b5cf6; color: #6d28d9;">📊 Project Overview</h2>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+<div><canvas id="statusChart"></canvas></div>
+<div><canvas id="prChart"></canvas></div>
+</div>
+</div>
+
 <div class="grid">
 
 <div class="card inflight">
@@ -104,5 +114,25 @@ footer { text-align: center; padding: 2rem; color: #a8a29e; font-size: 0.85rem; 
 <footer>
 Built for Gopi · Updated by Zuck · <a href="https://github.com/agk4444/project-dashboard" style="color:#a8a29e">GitHub</a>
 </footer>
+<script>
+// Status breakdown
+new Chart(document.getElementById('statusChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['In Flight', 'Autopilot', 'Waiting on Gopi', 'Parked', 'Done'],
+    datasets: [{ data: [3, 8, 7, 4, 8], backgroundColor: ['#f59e0b','#10b981','#ef4444','#6b7280','#3b82f6'] }]
+  },
+  options: { plugins: { title: { display: true, text: 'Projects by Status' } } }
+});
+// AGK OS PRs merged (Oct 16)
+new Chart(document.getElementById('prChart'), {
+  type: 'bar',
+  data: {
+    labels: ['#17', '#18', '#20', '#22', '#23'],
+    datasets: [{ label: 'PRs merged Oct 16', data: [1,1,1,1,1], backgroundColor: '#8b5cf6' }]
+  },
+  options: { plugins: { title: { display: true, text: 'AGK OS PRs Merged Today' } }, scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } } }
+});
+</script>
 </body>
 </html>
