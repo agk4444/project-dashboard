@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gopi's Project Dashboard</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f5f5f4; color: #1c1917; line-height: 1.6; }
+header { background: #1c1917; color: #fafaf9; padding: 2rem; text-align: center; }
+header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+header p { color: #a8a29e; font-size: 0.9rem; }
+.container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
+.card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.card h2 { font-size: 1.1rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid; }
+.card.inflight h2 { border-color: #f59e0b; color: #b45309; }
+.card.autopilot h2 { border-color: #10b981; color: #047857; }
+.card.waiting h2 { border-color: #ef4444; color: #b91c1c; }
+.card.parked h2 { border-color: #6b7280; color: #4b5563; }
+.card.done h2 { border-color: #3b82f6; color: #1d4ed8; }
+.card ul { list-style: none; }
+.card li { padding: 0.6rem 0; border-bottom: 1px solid #f5f5f4; font-size: 0.92rem; }
+.card li:last-child { border-bottom: none; }
+.card li strong { display: block; margin-bottom: 0.2rem; }
+.badge { display: inline-block; font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 9999px; margin-left: 0.5rem; vertical-align: middle; }
+.badge.urgent { background: #fee2e2; color: #b91c1c; }
+.badge.new { background: #dbeafe; color: #1d4ed8; }
+footer { text-align: center; padding: 2rem; color: #a8a29e; font-size: 0.85rem; }
+.updated { text-align: center; color: #78716c; font-size: 0.85rem; margin-bottom: 1.5rem; }
+</style>
+</head>
+<body>
+<header>
+<h1>🚀 Gopi's Project Dashboard</h1>
+<p>Live tracking of all active work</p>
+</header>
+<div class="container">
+<p class="updated">Last updated: October 16, 2026 ~11:45 AM ET</p>
+<div class="grid">
+
+<div class="card inflight">
+<h2>🔥 In Flight Right Now</h2>
+<ul>
+<li><strong>AGK OS Actions Mode</strong> <span class="badge new">PR #17-23</span><br>Branch verification, wake cleanup, idempotency, artifact retry — all merged. Chess-game verified.</li>
+<li><strong>Chess-game merge</strong><br>Branch <code>chess-game-20261015</code> verified (run #17 green). Awaiting merge to main in agkfire-backup.</li>
+<li><strong>HeyPuter App Shelf</strong><br>Spec docs in AGK OS repo. Branch <code>agk-os-heyputer-app-shelf-20261015</code> unmerged.</li>
+</ul>
+</div>
+
+<div class="card autopilot">
+<h2>✅ Running on Autopilot</h2>
+<ul>
+<li><strong>Psepho/Chunav</strong> — forecast refresh every 2h</li>
+<li><strong>Options watch</strong> — unusual activity every 30 min</li>
+<li><strong>Telegram→Instagram</strong> — cross-post every 6h</li>
+<li><strong>SocialNews health</strong> — connector check every 30 min</li>
+<li><strong>MOC imbalance</strong> — 3:50 PM ET daily</li>
+<li><strong>Morning brief</strong> — markets + WhatsApp headlines 7:30 AM</li>
+<li><strong>Jev benchmark watch</strong> — ongoing</li>
+<li><strong>Mac Mini M4</strong> — price watch</li>
+</ul>
+</div>
+
+<div class="card waiting">
+<h2>⏳ Waiting on Gopi</h2>
+<ul>
+<li><strong>SpecPals Poker</strong> <span class="badge urgent">decision</span><br>Scrap R3F 3D and start fresh, or keep iterating?</li>
+<li><strong>SocialNews redesign</strong><br>Install <code>socialnews-functionality</code> ZIP first, then theme swap</li>
+<li><strong>Hybrid search</strong><br>Build FULLTEXT index tonight after 8:10 PM ET</li>
+<li><strong>Missing Threads</strong><br>TG 714625, 714635 need manual publish</li>
+<li><strong>Android crash</strong><br>Paste FATAL EXCEPTION trace</li>
+<li><strong>Aditya369</strong><br>Launch 10-11h FEVER run</li>
+<li><strong>SAT tutor</strong><br>Bonsai 2 eval needs GPU quota</li>
+</ul>
+</div>
+
+<div class="card parked">
+<h2>🅿️ Parked / Paused</h2>
+<ul>
+<li>Trending-articles pipeline (no easy post path)</li>
+<li>Nick Timiraos X watch (X blocking reads)</li>
+<li>Offline SAT tutor for phones</li>
+<li>SocialNews staging clone (waiting on backup)</li>
+</ul>
+</div>
+
+<div class="card done">
+<h2>✨ Recently Done</h2>
+<ul>
+<li><strong>Actions 404 fix</strong> — removed GITHUB_REPO, token resolves repo</li>
+<li><strong>Wake polling fix</strong> — PR #17, no more hangs</li>
+<li><strong>Branch verification</strong> — PR #18, #22</li>
+<li><strong>Wake cleanup</strong> — PR #20, single dispatch</li>
+<li><strong>Artifact retry</strong> — PR #23</li>
+<li><strong>WP Google RAG v1.3.31</strong> — verified live</li>
+<li><strong>Actions storage</strong> — cleaned 2.5GB old artifacts</li>
+<li><strong>HANDS_MODE docs</strong> — PR #24</li>
+</ul>
+</div>
+
+</div>
+</div>
+<footer>
+Built for Gopi · Updated by Zuck · <a href="https://github.com/agk4444/project-dashboard" style="color:#a8a29e">GitHub</a>
+</footer>
+</body>
+</html>
